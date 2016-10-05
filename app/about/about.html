@@ -1,1 +1,28 @@
-<h1>About</h1>
+<h2>Angular 2 Carousel - Gallery</h2>
+<div class="row">
+    <div class="gallery">
+      <div class="frame" *ngFor="let img of slides; let index = index" (click)="showCarousel(index)">
+        <div class="img-responsive">
+          <img src="{{img.image}}" alt="" />
+        </div>
+      </div>
+    </div>
+
+    <carousel [interval]="NextPhotoInterval" [noWrap]="noLoopSlides" *ngIf="isCarouselShown">
+      <slide *ngFor="let slidez of slides; let index=index"
+             [active]="slidez.active">
+        <img [src]="slidez.image" style="margin:auto;">
+
+        <div class="carousel-caption">
+          <h3 style="background-color: transparent;color: white;">Slide {{index + 1}}</h3>
+          <p  style="background-color: transparent;color: white;">{{slidez.text}}</p>
+        </div>
+      </slide>
+    </carousel>
+
+  <div class="col-md-12">
+    <button type="button" class="btn btn-info"
+            (click)="removeLastSlide()">Remove Last Slide
+    </button>
+  </div>
+</div>
