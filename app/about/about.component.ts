@@ -41,6 +41,5 @@ export class AboutComponent  {
 
     private showCarousel(Index: number): void {
       this.isCarouselShown = true;
-      this._indexSlideActive = Index;
     }
 }

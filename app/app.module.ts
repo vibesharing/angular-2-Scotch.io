@@ -9,6 +9,9 @@ import { AppComponent }  from './app.component';
 import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
+import { AboutUserComponent } from './about.user/about.user.component';
+
+import { UserService } from './services/userService.service'
 
 
 
@@ -19,7 +22,9 @@ import { AboutComponent } from './about/about.component';
     HomeComponent,
     ContactComponent,
     AboutComponent,
+    AboutUserComponent,
   ],
-  bootstrap: [ AppComponent ]
+  providers: [ UserService ],
+  bootstrap: [ AppComponent ],
 })
 export class AppModule { }
