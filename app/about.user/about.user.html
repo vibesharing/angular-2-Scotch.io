@@ -1,4 +1,8 @@
 <div class="row">
+  <div class="col-sm-4">
+    <button type="button" name="button" (click)='goBack()'>Go back</button>
+
+  </div>
   <div class="col-sm-4" *ngIf="_user">
     <div class="profile-card">
       <img src="{{_user.avatar}}" class="img-responsive img-circle" alt="" />
